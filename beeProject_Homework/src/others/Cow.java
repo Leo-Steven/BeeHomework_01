@@ -56,7 +56,7 @@ public class Cow extends Animal {
                 this.setGender(gender1 );
                 break;
             case 3:
-                int age1 =scanner.nextInt();
+                int age1 =Contorl.getNumber();
                 this.setAge(age1 );
                 break;
             case 4:

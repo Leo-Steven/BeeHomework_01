@@ -84,7 +84,7 @@ public class Contorl {
      * 用于给数字类型的参数从键盘输入赋值，避免了
      * 因为InputMismatchException错误而导致程序崩溃
      * */
-    public int getNumber(){
+    public static int getNumber(){
         int number=0;
         try{
             number=scanner.nextInt();
