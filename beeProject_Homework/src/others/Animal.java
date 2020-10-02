@@ -6,17 +6,19 @@ public class Animal implements Comparable<Animal> {
     private String varity;
     private String gender;
     private int age;
-    public Animal(String varity,String gender,int age){
-        this.varity=varity;
-        this.gender=gender;
-        this.age=age;
+
+    public Animal(String varity, String gender, int age) {
+        this.varity = varity;
+        this.gender = gender;
+        this.age = age;
     }
-// 实现Comparable接口，结合使用treeset集合，可以实现”按动物年龄排序“
+
+    // 实现Comparable接口，结合使用treeset集合，可以实现”按动物年龄排序“
     @Override
     public int compareTo(Animal o) {
-        if(this.age>o.age){
+        if (this.age > o.age) {
             return 1;
-        }else if(this.age<o.age){
+        } else if (this.age < o.age) {
             return -1;
         }
         return 0;
@@ -46,7 +48,6 @@ public class Animal implements Comparable<Animal> {
         this.age = age;
     }
 
-    public void set(){}
 
     @Override
     public boolean equals(Object o) {
@@ -72,7 +73,7 @@ public class Animal implements Comparable<Animal> {
         return "Animal{" +
                 "varity='" + varity + '\'' +
                 ", gender='" + gender + '\'' +
-                ", age=" + age +'\n'+
+                ", age=" + age + '\n' +
                 '}';
     }
 }

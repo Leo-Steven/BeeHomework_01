@@ -1,4 +1,3 @@
-
 import others.Animal;
 import others.Bee;
 import others.Contorl;
@@ -19,14 +18,14 @@ import java.util.TreeSet;
 
 public class BeeWork {
     public static void main(String[] args) {
-        TreeSet<Animal> animals= new TreeSet<>();
-        Animal animal=new Cow("Cow","female",12,"black");
-        Animal animal1=new Cow("Cow","female",15,"black");
-        Animal animal2=new Bee("蜂王","female",10,"采蜜");
+        TreeSet<Animal> animals = new TreeSet<>();
+        Animal animal = new Cow("Cow", "female", 12, "black");
+        Animal animal1 = new Cow("Cow", "female", 15, "black");
+        Animal animal2 = new Bee("蜂王", "female", 10, "采蜜");
         animals.add(animal);
         animals.add(animal1);
         animals.add(animal2);
-        Contorl contorl=new Contorl(animals);
+        Contorl contorl = new Contorl(animals);
         contorl.run();
     }
 }
