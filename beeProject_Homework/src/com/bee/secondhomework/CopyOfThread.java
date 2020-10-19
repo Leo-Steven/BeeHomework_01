@@ -26,8 +26,6 @@ public class CopyOfThread {
             excutors.submit(new RunnableImpl(file, copyFile, 0, file.length() / 2));
             excutors.submit(new RunnableImpl(file, copyFile, file.length() / 2, file.length()));
             excutors.shutdown();
-//            new Thread(new RunnableImpl(file, copyFile, 0, file.length() / 2), "Thread1").start();
-//            new Thread(new RunnableImpl(file, copyFile, file.length() / 2, file.length()), "Thread2").start();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

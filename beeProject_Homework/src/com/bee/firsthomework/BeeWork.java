@@ -1,7 +1,9 @@
-import others.Animal;
-import others.Bee;
-import others.Contorl;
-import others.Cow;
+package com.bee.firsthomework;
+
+import com.bee.firsthomework.others.Animal;
+import com.bee.firsthomework.others.Bee;
+import com.bee.firsthomework.others.Contorl;
+import com.bee.firsthomework.others.Cow;
 
 import java.util.TreeSet;
 /*

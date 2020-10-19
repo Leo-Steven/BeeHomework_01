@@ -1,4 +1,4 @@
-package others;
+package com.bee.firsthomework.others;
 
 import java.util.InputMismatchException;
 import java.util.Iterator;
