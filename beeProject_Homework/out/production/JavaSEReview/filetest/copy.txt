@@ -1,0 +1,64 @@
+package filetest;
+
+import jdk.internal.util.xml.impl.Input;
+
+import java.io.*;
+
+// 使用监听器对文件夹中所有的以 .java结尾的文件进行输出打印
+public class IODemo01 {
+    public static void main(String[] args){
+        // 使用了相对路径
+//        File file=new File("../JavaSEReview");
+//        allFile(file);
+        copyFile();
+//        copyByReader();
+    }
+    public static void allFile(File file){
+        File[] files=file.listFiles(new FilenameFilterImpl());
+        // 可以采用匿名内部类简化，也可以采用lamda表达式简化
+        if (files != null) {
+            for (File file1:files
+                 ) {
+                // 采用递归语句将文件夹逐一遍历
+                if(file1.isDirectory()){
+                    allFile(file1);
+                }else{
+                    System.out.println(file1);
+                }
+            }
+        }
+    }
+
+    public static void copyFile(){
+
+        try (OutputStream os=new FileOutputStream("../JavaSEReview/src/filetest/copy.txt",false);
+             InputStream is=new FileInputStream("../JavaSEReview/src/filetest/IODemo01.java");){
+            byte[] bytes=new byte[1024];
+            int len;
+            while((len=is.read(bytes))!=-1){
+                os.write(bytes,0,len);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void copyByReader(){
+        try {
+            Reader reader=new FileReader("../JavaSEReview/src/filetest/IODemo01.java");
+            Writer writer=new FileWriter("../JavaSEReview/src/filetest/copy01.txt");
+            char[] chars=new char[1024];
+            int len;
+            while ((len= reader.read(chars))!=-1){
+                writer.write(chars,0,len);
+                writer.flush();
+            }
+            reader.close();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
